@@ -1,0 +1,15 @@
+login with username or email
+
+1. change email input to username
+2. update AuthenticateUsers.php
+
+
+public function username(){
+
+$loginValue = request('username');
+$username = filter_var($loginValue, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+return 'username';
+}
+
+3. alter table users add username varchar(255);
